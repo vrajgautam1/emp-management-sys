@@ -1,12 +1,51 @@
-# React + Vite
+# 🧾 React CRUD App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **Employee Management** CRUD application built with **React**, demonstrating the use of `useState` and `useEffect` hooks. It allows you to **create, read, update, and delete** employee records, with data stored in the **browser's localStorage** for persistence.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Description
 
-## Expanding the ESLint configuration
+This project is a beginner-friendly React application where users can manage employee data with basic tag selections, and an interactive table. It's styled for a clean interface and works entirely in the browser with no backend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **JavaScript (ES6)**
+- **Bootstrap 5 
+- **LocalStorage** (for storing employee data)
+- **Vite** 
+
+---
+
+## 🔗 Live Link
+
+👉 [Live Demo](https://emp-management-sys-pi.vercel.app/)  
+> Replace the link above with your actual deployed Vercel link
+
+---
+
+## 📸 Screenshot
+
+![App Screenshot](./src/assets/Vite-React-05-18-2025_01_17_AM.png)  
+> Save a screenshot of your running app as `screenshot.png` in the root folder.
+
+---
+
+## 📚 Features
+
+- Add new employees with tags like Python or JavaScript
+- Edit existing employee information
+- Delete employees
+- Data persists across page reloads using `localStorage`
+- Clean UI with basic styling
+
+---
+
+## 🚀 Setup
+
+```bash
+npm install
+npm run dev
