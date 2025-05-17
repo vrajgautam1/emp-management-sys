@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import Table from "./components/table";
+import Form from "./components/form";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [editingEmp, setEditingEmp] = useState({})
+    const [employeesList, setEmployessList] = useState(()=>{
+        let stored = JSON.parse(localStorage.getItem("employees"))
+        if(stored){
+            return stored
+        }else{
+            return []
+        }
+    });
+
+    useEffect(()=>{
+        try {
+            localStorage.setItem("employees", JSON.stringify(employeesList))
+        } catch (error) {
+            console.log(error);
+        }
+        
+        
+    }, [employeesList])
+
+    return (
+        <div className="container mt-5">
+             <h2 className="text-center mb-4 text-white">Employee Management</h2>
+            <Form employeesList={employeesList} setEmployessList={setEmployessList} editingEmp={editingEmp} setEditingEmp={setEditingEmp}/>
+            <Table employeesList={employeesList} setEmployessList={setEmployessList} editingEmp={editingEmp} setEditingEmp={setEditingEmp}/>
+        </div>
+    );
 }
+ 
 
-export default App
+export default App;
